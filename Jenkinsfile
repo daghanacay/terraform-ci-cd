@@ -6,8 +6,10 @@ pipeline {
     stages {
         stage('terraform init - dev') {
             steps{
+                sh "ls"
                 sh "cd dev"
-                sh "echo \$(pwd)"
+                sh "ls"
+                sh "pwd"
                 sh "terraform init"
                 sh "terraform apply -auto-approve"
             }
