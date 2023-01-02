@@ -6,16 +6,14 @@ pipeline {
     stages {
         stage('terraform init - dev') {
             steps{
-                dir('dev')
-                sh "pwd"
+                dir('dev') { sh "pwd" }
                 sh "terraform init"
                 sh "terraform apply -auto-approve"
             }
         }
         stage('terraform init - prod') {
             steps{
-                dir('dev')
-                sh "pwd"
+                dir('prod') { sh "pwd" }
                 sh "terraform init"
                 sh "terraform apply -auto-approve"
             }
