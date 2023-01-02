@@ -8,14 +8,14 @@ pipeline {
             steps{
                 sh "cd dev"
                 sh "terraform init"
-                sh "terraform init -auto-approve"
+                sh "terraform apply -auto-approve"
             }
         }
         stage('terraform init - prod') {
             steps{
                 sh "cd prod"
                 sh "terraform init"
-                sh "terraform init -auto-approve"
+                sh "terraform apply -auto-approve"
             }
         }
     }
