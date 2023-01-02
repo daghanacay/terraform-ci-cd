@@ -9,16 +9,21 @@ pipeline {
                 dir('dev') { 
                     sh "pwd" 
                     sh "ls"
+                    sh "terraform init"
+                    sh "terraform apply -auto-approve"
                 }
-                sh "terraform init"
-                sh "terraform apply -auto-approve"
+                
             }
         }
         stage('terraform init - prod') {
             steps{
-                dir('prod') { sh "pwd" }
-                sh "terraform init"
-                sh "terraform apply -auto-approve"
+                dir('prod') { 
+                    sh "pwd" 
+                    sh "ls"
+                    sh "terraform init"
+                    sh "terraform apply -auto-approve"
+                 }
+                
             }
         }
     }
