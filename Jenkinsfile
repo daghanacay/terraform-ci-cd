@@ -4,11 +4,6 @@ pipeline {
         PATH = "${PATH}:${getTerraformPath()}"
     }
     stages {
-        stage ('create s3 bucket') {
-            steps {
-                sh "ansible-playbook s3-bucket-ansible.yml"
-            }
-        }
         stage('terraform init - dev') {
             steps{
                 dir('dev') { 
