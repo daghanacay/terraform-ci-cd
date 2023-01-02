@@ -10,8 +10,9 @@ pipeline {
                     sh "pwd" 
                     sh "ls"
                     sh "terraform init"
-                    sh "ansible-playbook terraform-ansible.yml"
+                    
                 }
+                sh "ansible-playbook terraform-ansible.yml"
                 
             }
         }
