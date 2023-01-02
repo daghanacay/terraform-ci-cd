@@ -15,17 +15,7 @@ pipeline {
                 
             }
         }
-        stage('terraform init - prod') {
-            steps{
-                dir('prod') { 
-                    sh "pwd" 
-                    sh "ls"
-                    sh "terraform init"
-                    sh "terraform apply -auto-approve"
-                 }
-                
-            }
-        }
+        
     }
 }
 
