@@ -11,6 +11,10 @@ yum install jenkins -y
 echo "install git"
 yum install git -y
 
+echo "Insatll ansible"
+yum install python-pip -y
+pip install ansible
+
 echo "running jenkins" 
 
 service jenkins start

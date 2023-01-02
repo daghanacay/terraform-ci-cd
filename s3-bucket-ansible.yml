@@ -1,0 +1,10 @@
+- hosts: localhost
+  tasks:
+    - name: install boto3
+      pip:
+        name: boto3
+        state: present
+    - name: Create s3 bucket
+      s3_bucket:
+        name: daghan-terraform-bucket-ansible
+        state: present

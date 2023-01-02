@@ -1,0 +1,18 @@
+- hosts: localhost
+  vars:
+    state: present
+    s3_bucket: daghan-terraform-bucket-ansible
+    key: ""
+    region : ap-southeast-2
+  tasks:
+    - name: Run terraform scripts
+      terraform:
+        project_path: "./dev"
+        state: "{{ state }}"
+        backend_config: 
+          bucket: "{{ s3_bucket }}"
+          key: "{{ key }}"
+          region: "{{ region }}"
+        
+        
+
